@@ -7,6 +7,27 @@
     <div class="jumbotron">
       <h1 class="display-4">Welcome to the <%= title %> page</h1>
     </div>
+
+    <% if (title == "Home") { %>
+      <%- include partials/home_content.ejs %>
+    <% } %>
+
+    <% if (title == "About") { %>
+      <%- include partials/about_content.ejs %>
+      <% } %>
+
+    <% if (title == "Projects") { %>
+      <%- include partials/projects_content.ejs %>
+    <% } %>
+
+    <% if (title == "Services") { %>
+      <%- include partials/services_content.ejs %>
+    <% } %>
+
+    <% if (title == "Contact") { %>
+      <%- include partials/contact_content.ejs %>
+    <% } %>
+      
   </main>
 
 <%- include partials/bottom_nav.ejs %>

@@ -1,1 +1,14 @@
 /* Custom css goes here */
+body {
+    background-color: black;
+    color: white;
+    line-height: 1;
+    margin: 0 auto;
+    font-family: verdana, arial, helvetica, sans-serif;
+    position: relative;
+ }
+ 
+ h1 {
+    text-align: center;
+    padding: 0.5em;
+ }
