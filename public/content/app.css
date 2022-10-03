@@ -11,6 +11,7 @@ body, html {
     padding: 0.5em;
  }
 
+ /* css for main content on pages */
  #main_content {
   margin-bottom: 70px;
   border-radius: 10px;
@@ -19,6 +20,7 @@ body, html {
   border: 3px solid black;
  }
 
+ /* logo on home page */
  #main_logo {
    display: block;
    margin-left: auto;
@@ -31,16 +33,14 @@ body, html {
    text-align: right;
  }
 
+/* picture on services page */
  #service_picture {
    width: 400px;
    height: 300px;
  }
 
+/* pictures on projects page */
 #project_picture {
    width: 600px;
    height: 350px;
-}
-
-#bottom {
-   position: relative;
 }
