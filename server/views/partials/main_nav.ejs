@@ -1,0 +1,61 @@
+<!-- Main nav -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="/"><img src="assets/images/logo.png" alt="logo" width="50px" height="50px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        
+        <% if (title == "Home") { %>
+          <li class="nav-item active">
+          <% } else { %>
+            <li class="nav-item">
+          <% } %>
+          <a class="nav-link" href="/home"><i class="fa-solid fa-house"></i> Home</a>
+        </li>
+
+        <% if (title == "About") { %>
+          <li class="nav-item active">
+          <% } else { %>
+            <li class="nav-item">
+          <% } %>
+          <a class="nav-link" href="/about"><i class="fa-solid fa-question"></i> About</a>
+        </li>
+
+        <% if (title == "Projects") { %>
+          <li class="nav-item active">
+          <% } else { %>
+            <li class="nav-item">
+          <% } %>
+          <a class="nav-link" href="/projects"><i class="fa-solid fa-paperclip"></i> Projects</a>
+        </li>
+
+        <% if (title == "Services") { %>
+          <li class="nav-item active">
+          <% } else { %>
+            <li class="nav-item">
+          <% } %>
+          <a class="nav-link" href="/services"><i class="fa-solid fa-clipboard"></i> Services</a>
+        </li>
+
+        <% if (title == "Contact") { %>
+          <li class="nav-item active">
+          <% } else { %>
+            <li class="nav-item">
+          <% } %>
+          <a class="nav-link" href="/contact"><i class="fa-solid fa-comments"></i> Contact</a>
+        </li>
+
+        <% if(typeof displayName == 'string' && displayName) { %>
+          <li class="navbar-text"><i class="fas fa-lg fa-user"></i> Welcome, <%= displayName %></li>
+          <li class="nav-item"><a href="/logout" class="nav-link">
+            <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
+        <% } else { %>
+          <li class="nav-item"><a href="/login" class="nav-link">
+            <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
+        <% } %>
+       
+    </div>
+  </nav>
