@@ -53,7 +53,11 @@
           <% } else { %>
             <li class="nav-item">
           <% } %>
-          <a class="nav-link" href="/contact"><i class="fa-solid fa-comments"></i> Contacts</a>
+          <% if(typeof displayName == 'string' && displayName) { %>
+            <a class="nav-link" href="/contact"><i class="fa-solid fa-comments"></i> Contacts</a>
+          <% } else { %>
+            <a class="nav-link" href="/login"><i class="fa-solid fa-comments"></i> Contacts</a>
+          <% } %>
         </li>
 
         <% if(typeof displayName == 'string' && displayName) { %>

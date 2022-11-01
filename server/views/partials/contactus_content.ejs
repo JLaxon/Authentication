@@ -1,31 +1,66 @@
-    <!-- Form to fill out contact info -->
-    <form id="contactus">
-        <p>
-        Please fill out info to get in contact with Jonathan.
-        </p>
-        <p>
-            <label for="txtFName">First Name:&nbsp&nbsp</label>
-            <input id="fName" name="txtFName" size="25" type="text" tabindex="1" required="required">
-        </p>
-        <p>
-            <label for="txtLName">Last Name:&nbsp&nbsp</label>
-            <input id="lName" name="txtLName" size="25" type="text" tabindex="3" required="required">
-        </p>
-        <p>
-            <label for="txtPhone">Phone Number:&nbsp&nbsp</label>
-            <input id="phone" name="txtPhone" size="25" type="text" tabindex="5" required="required">
-        </p>
-        <p>
-            <label for="txtEmail">Email:&nbsp&nbsp</label>
-            <input id="email" name="txtEmail" size="25" type="text" tabindex="7" required="required">
-        </p>
-        <p>
-            <label for="txtMessage">Message:&nbsp&nbsp</label>
-            <textarea id="message" name="txtMessage" rows="4" cols="40" type="text" tabindex="9"></textarea>
-        </p>
-        <p>
-            <a href="/home">
-                <input name="btnConfirm" tabindex="11" type="button" id="submit" value="Confirm" onclick="getInfo()">
-            </a>
-        </p>
-    </form>
+<!-- Content  for the Contact Us page -->
+<div class="container">
+  <div class="row">
+    <div class="offset-md-3 col-md-6">
+      <h1><%=title %></h1>
+
+      <form class="form" method="post">
+        <div class="from-group">
+          <label for="firstNameTextField">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstNameTextField"
+            placeholder="Enter First Name:"
+            name="firstName"
+            required
+          />
+        </div>
+
+        <div class="from-group">
+          <label for="lastNameTextField">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastNameTextField"
+            placeholder="Enter Last Name:"
+            name="lastName"
+            required
+          />
+        </div>
+
+        <div class="from-group">
+          <label for="emailTextField">Email</label>
+          <input
+            type="text"
+            class="form-control"
+            id="emailTextField"
+            placeholder="Enter Email:"
+            name="email"
+            required
+          />
+        </div>
+
+        <div class="from-group">
+          <label for="numberTextField">Phone Number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="numberTextField"
+            placeholder="Enter Phone Number:"
+            name="number"
+            required
+            />
+        </div>
+        <br>
+        <button class="btn btn-primary" type="submit">
+          <i class="fas fa-edit"></i>Submit
+        </button>
+
+        <a href="/book-list" class="btn btn-warning">
+          <i class="fas fa-undo"></i>Cancel
+        </a>
+      </form>
+    </div>
+  </div>
+</div>

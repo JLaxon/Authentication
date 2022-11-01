@@ -7,6 +7,8 @@ let passport = require("passport");
 let jwt = require("jsonwebtoken");
 let DB = require("../config/db");
 
+let contact = require("../models/contact");
+
 //create the user model instance
 let userModel = require("../models/user");
 let User = userModel.User; //alias
@@ -46,6 +48,24 @@ module.exports.displayContactUspage = (req, res, next) => {
   });
 };
 
+module.exports.addprocesspage = (req, res, next) => {
+  let newcontact = contact({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    number: req.body.number,
+  });
+  contact.create(newcontact, (err, contact) => {
+    if (err) {
+      console.log(err);
+      res.end(err);
+    } else {
+      // refresh the contactus page
+      res.redirect("/contactus");
+    }
+  });
+};
+
 module.exports.displayLoginPage = (req, res, next) => {
     // check if the user is already logged in
     if (!req.user) {
@@ -75,8 +95,30 @@ module.exports.displayLoginPage = (req, res, next) => {
         if (err) {
           return next(err);
         }
-      return res.redirect("/contact");
-    });
+
+        const payload =
+        {
+          id: user._id,
+          displayName: user.displayName,
+          username: user.username,
+          email: user.email,
+        }
+
+        const authToken = jwt.sign(payload, DB.Secret, {
+          expiresIn: 604000 // 1 week
+        });
+
+        /* TODO - Getting ready to convert to API
+        res.json({success: true, msg: 'User Logged in Sucessfully!', user: {
+          id: user._id,
+          displayName: user.displayName,
+          username: user.username,
+          email: user.email,
+        }, token: authToken});
+        */
+
+        return res.redirect("/contact");
+      });
   })(req, res, next);
 };
 module.exports.displayRegisterPage = (req, res, next) => {
@@ -120,6 +162,15 @@ module.exports.displayRegisterPage = (req, res, next) => {
         // if no error exists, then registration is successful
   
         // redirect the user and authenticate them
+
+        /* TODO - Getting ready to convert to API
+        res.json({success: true, msg: 'User Registered Successfully!', user: {
+          id: user._id,
+          displayName: user.displayName,
+          username: user.username,
+          email: user.email,
+        }, token: authToken});
+        */
   
         return passport.authenticate("local")(req, res, () => {
           res.redirect("/contact");

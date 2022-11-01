@@ -12,26 +12,18 @@
             <table class="table table-bordered table-striped table-hover">
                 <!-- Header Row-->
                 <tr>
-                    <% if(typeof displayName == 'string' && displayName) { %>
                         <th class="text-center col-2">First Name</th>
                         <th class="text-center col-2">Last Name</th>
                         <th class="text-center col-1">Email</th>
                         <th class="col-4">Phone Number</th>
                         <th class="text-center col-1"></th>
                         <th class="text-center col-1"></th>
-                    <% } else { %>
-                        <th class="text-center col-2">First Name</th>
-                        <th class="text-center col-2">Last Name</th>
-                        <th class="text-center col-1">Email</th>
-                        <th class="col-6">Phone Number</th>
-                    <% } %>
                 </tr>
 
                 <!-- Repeatable Template Row -->
 
                 <% for(let count = 0; count < contactList.length; count++) { %>
                     <tr>
-                        <% if(typeof displayName == 'string' && displayName) { %>
                             <td class="text-center col-2"><%= contactList[count].firstName %></td>
                             <td class="text-center col-2"><%= contactList[count].lastName %></td>
                             <td class="text-center col-1"><%= contactList[count].email %></td>
@@ -44,12 +36,6 @@
                                 <a href="/contact/delete/<%= contactList[count]._id %>" class="btn btn-danger btn-sm">
                                 <i class="fas fa-trash-alt"></i> Delete</a>
                             </td>
-                         <% } else { %>
-                            <td class="text-center col-2"><%= contactList[count].firstName %></td>
-                            <td class="text-center col-2"><%= contactList[count].lastName %></td>
-                            <td class="text-center col-1"><%= contactList[count].email %></td>
-                            <td class="col-6"><%= contactList[count].number %></td>
-                         <% } %>
                     </tr>
                 <% } %>
             </table>
