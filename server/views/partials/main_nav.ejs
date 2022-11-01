@@ -40,12 +40,20 @@
           <a class="nav-link" href="/services"><i class="fa-solid fa-clipboard"></i> Services</a>
         </li>
 
-        <% if (title == "Contact") { %>
+        <% if (title == "ContactUs") { %>
           <li class="nav-item active">
           <% } else { %>
             <li class="nav-item">
           <% } %>
-          <a class="nav-link" href="/contact"><i class="fa-solid fa-comments"></i> Contact</a>
+          <a class="nav-link" href="/contactus"><i class="fa-solid fa-comments"></i> Contact Us</a>
+        </li>
+
+        <% if (title == "contacts") { %>
+          <li class="nav-item active">
+          <% } else { %>
+            <li class="nav-item">
+          <% } %>
+          <a class="nav-link" href="/contact"><i class="fa-solid fa-comments"></i> Contacts</a>
         </li>
 
         <% if(typeof displayName == 'string' && displayName) { %>

@@ -25,8 +25,12 @@
         <%- include partials/services_content.ejs %>
       <% } %>
 
-      <% if (title == "Contact") { %>
-        <%- include partials/contact_content.ejs %>
+      <% if (title == "ContactUs") { %>
+        <%- include partials/contactus_content.ejs %>
+      <% } %>
+
+      <% if (title == "contact") { %>
+        <%- include contact/list.ejs %>
       <% } %>
 
     </div>

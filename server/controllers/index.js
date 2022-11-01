@@ -25,9 +25,9 @@ module.exports.displayaboutpage = (req, res, next) => {
   });
 };
 
-module.exports.displayproductpage = (req, res, next) => {
+module.exports.displayprojectpage = (req, res, next) => {
   res.render("index", {
-    title: "Products",
+    title: "Projects",
     displayName: req.user ? req.user.displayName : "",
   });
 };
@@ -39,9 +39,9 @@ module.exports.displayservicespage = (req, res, next) => {
   });
 };
 
-module.exports.displayContactpage = (req, res, next) => {
+module.exports.displayContactUspage = (req, res, next) => {
   res.render("index", {
-    title: "Contact",
+    title: "ContactUs",
     displayName: req.user ? req.user.displayName : "",
   });
 };
@@ -75,31 +75,7 @@ module.exports.displayLoginPage = (req, res, next) => {
         if (err) {
           return next(err);
         }
-        const payload = {
-          id: user._id,
-          displayName: user.displayName,
-          username: user.username,
-          email: user.email,
-        };
-  
-        const authToken = jwt.sign(payload, DB.Secret, {
-          expiresIn: 604800, // 1 week
-        });
-        
-        /* TODO - Getting Ready to convert to API
-      return res.json({
-        success: true,
-        msg: "User Logged in Successfully!",
-        user: {
-          id: user._id,
-          displayName: user.displayName,
-          username: user.username,
-          email: user.email,
-        },
-        token: authToken,
-      });*/
-
-      //return res.redirect("/book-list");
+      return res.redirect("/contact");
     });
   })(req, res, next);
 };
@@ -145,11 +121,8 @@ module.exports.displayRegisterPage = (req, res, next) => {
   
         // redirect the user and authenticate them
   
-        /* TODO - Getting Ready to convert to API
-        res.json({ success: true, msg: "User Registered Successfully!" });*/
-  
         return passport.authenticate("local")(req, res, () => {
-          //res.redirect("/book-list");
+          res.redirect("/contact");
         });
       }
     });

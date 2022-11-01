@@ -5,7 +5,7 @@
  */
 
 let app = require('./server/config/app');
-let debug = require('debug')('jonlaxonassignment1:server');
+let debug = require('debug')('jonlaxonassignment2:server');
 let http = require('http');
 
 /**

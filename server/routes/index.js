@@ -12,14 +12,14 @@ router.get("/home", indexController.displayHomepage);
 /* GET About Us page. */
 router.get("/about", indexController.displayaboutpage);
 
-/* GET Products page. */
-router.get("/products", indexController.displayproductpage);
+/* GET Projects page. */
+router.get("/projects", indexController.displayprojectpage);
 
 /* GET Services page. */
 router.get("/services", indexController.displayservicespage);
 
 /* GET Contact Us page. */
-router.get("/contact", indexController.displayContactpage);
+router.get("/contactus", indexController.displayContactUspage);
 
 /* GET Route for displaying the Login page */
 router.get("/login", indexController.displayLoginPage);

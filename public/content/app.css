@@ -6,10 +6,14 @@ body, html {
    color: white
 }
  
- h1 {
+h1 {
     text-align: center;
     padding: 0.5em;
- }
+}
+
+tr {
+  color: white
+}
 
  /* css for main content on pages */
  #main_content {
